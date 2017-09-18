@@ -1,0 +1,45 @@
+{
+  "name": "serverless-micro",
+  "version": "0.0.2",
+  "description": "this is the serverless plugin to help manage multiple micro services under one main service.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sublet/serverless-micro.git"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "keywords": [
+    "serverless",
+    "micro service"
+  ],
+  "author": "sublet",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/sublet/serverless-micro/issues"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.4.0",
+    "pre-commit": "^1.2.2",
+    "sinon": "^2.3.8",
+    "async": "^2.5.0",
+    "copy": "^0.3.1",
+    "lodash": "^4.17.4",
+    "write": "^1.0.3",
+    "yamljs": "^0.3.0"
+  },
+  "homepage": "https://github.com/sublet/serverless-micro#readme",
+  "scripts": {
+    "release": "sh ops/release.sh",
+    "eslint": "node_modules/.bin/eslint ./**/*.js",
+    "validate": "npm ls"
+  },
+  "pre-commit": [
+    "eslint"
+  ]
+}

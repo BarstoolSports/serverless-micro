@@ -1,0 +1,13 @@
+.serverless
+npm-debug.*
+dist
+node_modules
+.DS_Store
+.tmp
+.env
+npm-debug.log
+.serverless
+coverage/
+.idea/
+.editorconfig
+
