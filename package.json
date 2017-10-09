@@ -20,19 +20,20 @@
   "bugs": {
     "url": "https://github.com/barstoolsports/serverless-micro/issues"
   },
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "async": "^2.5.0",
-    "chai": "^4.1.2",
     "child_process": "^1.0.2",
     "copy": "^0.3.1",
     "fs": "0.0.1-security",
     "lodash": "^4.17.4",
-    "mocha": "^3.4.0",
-    "pre-commit": "^1.2.2",
-    "sinon": "^2.3.8",
     "write": "^1.0.3",
     "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.4.0",
+    "pre-commit": "^1.2.2",
+    "sinon": "^2.3.8"
   },
   "homepage": "https://github.com/barstoolsports/serverless-micro#readme",
   "scripts": {
