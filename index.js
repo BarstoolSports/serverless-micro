@@ -45,7 +45,7 @@ class ServerlessMicroServicesPlugin {
                 shortcut: 's'
               },
               gateway: {
-                usage: 'Specify the stage you want to deploy (e.g. "--stage prod or "-s prod")',
+                usage: 'Add this flag if you want to setup an API Gateway (e.g. "--gateway or "-g")',
                 required: false,
                 shortcut: 'g'
               }

@@ -1,6 +1,6 @@
 {
   "name": "serverless-micro",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "this is the serverless plugin to help manage multiple micro services under one main service.",
   "main": "index.js",
   "repository": {

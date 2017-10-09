@@ -8,6 +8,20 @@ A limit of Cloudformation is it can only hold 200 objects.  This becomes problem
 
 This plugin does not setup a main API Gateway file for you, although it is a major priority.  Currently, this still has to be managed using AWS and API Gateway.
 
+Additionally, you have to setup your folder structure in a specific way.  Again the goal is to make this more universal so it doesn't matter what folder structure you have setup.
+
+```yaml
+my_project:
+  serverless.yml
+  node_modules
+  lib
+  tests
+  handlers
+    stories.js
+    podcasts.js
+    videos.js
+```
+
 ## Installation
 
 Install the plugin from npm
@@ -37,7 +51,7 @@ functions:
   # Stories
 
   fetchStories:
-    handler: "handlers/fetchStories"
+    handler: "handlers/stores.fetchStories"
     events:
       - http:
           path: /stories
@@ -47,7 +61,7 @@ functions:
   # Podcasts
 
   fetchPodcasts:
-    handler: "handlers/fetchPodcasts"
+    handler: "handlers/podcasts.fetchPodcasts"
     events:
       - http:
           path: /podcasts
@@ -57,7 +71,7 @@ functions:
   # Videos
 
   fetchVideos:
-    handler: "handlers/fetchVideos"
+    handler: "handlers/videos.fetchVideos"
     events:
       - http:
           path: /videos
