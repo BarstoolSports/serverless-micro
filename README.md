@@ -8,7 +8,9 @@ A limit of Cloudformation is it can only hold 200 objects.  This becomes problem
 
 This plugin does not setup a main API Gateway file for you, although it is a major priority.  Currently, this still has to be managed using AWS and API Gateway.
 
-Additionally, you have to setup your folder structure in a specific way.  Again the goal is to make this more universal so it doesn't matter what folder structure you have setup.
+## Structure
+
+To get this plugin working properly, you have to setup your folder structure in a specific way.  Again the goal is to make this more universal so it doesn't matter what folder structure you have setup, but with dependencies be included in the handler files and mixing placement of lambdas, this get's very tricky.
 
 ```yaml
 my_project:
@@ -17,10 +19,12 @@ my_project:
   lib
   tests
   handlers
-    stories.js
-    podcasts.js
-    videos.js
+    service_1.js
+    service_2.js
+    service_3.js
 ```
+
+This is something we are focused on making improving, however, separating out the logic this way has worked really well, and enables a really good process.
 
 ## Installation
 
@@ -41,7 +45,7 @@ plugins:
   - serverless-micro
 ```
 
-Add the service name to each of your methods.
+Using the folder structure above, you then add the service name to each of your methods and separate them out.
 
 ```yaml
 # serverless.yml
@@ -51,32 +55,32 @@ functions:
   # Stories
 
   fetchStories:
-    handler: "handlers/stores.fetchStories"
+    handler: "handlers/service_1.serviceOneMethod"
     events:
       - http:
-          path: /stories
+          path: /serviceOne
           method: get
-    service: stories
+    service: service_1
 
   # Podcasts
 
   fetchPodcasts:
-    handler: "handlers/podcasts.fetchPodcasts"
+    handler: "handlers/service_2.serviceTwoMethod"
     events:
       - http:
-          path: /podcasts
+          path: /serviceTwo
           method: get
-    service: podcasts
+    service: service_2
 
   # Videos
 
   fetchVideos:
-    handler: "handlers/videos.fetchVideos"
+    handler: "handlers/service_3.serviceThreeMethod"
     events:
       - http:
-          path: /videos
+          path: /serviceThree
           method: get
-    service: videos
+    service: service_3
 
 ```
 
@@ -91,4 +95,4 @@ $ sls deploy micro --service stories --stage prod --function fetchStories
 ## Contributing
 
 We welcome pull requests! Please fork the repo and submit your PR.
-http://mcsorleys.barstoolsports.com/feed/the-podfathers
+https://github.com/BarstoolSports/serverless-micro
