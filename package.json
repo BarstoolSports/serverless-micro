@@ -1,5 +1,5 @@
 {
-  "name": "serverless-micro",
+  "name": "@barstoolsports/serverless-micro",
   "version": "1.0.0",
   "description": "this is the serverless plugin to help manage multiple micro services under one main service.",
   "main": "index.js",
