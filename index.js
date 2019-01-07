@@ -76,14 +76,13 @@ class ServerlessMicroServicesPlugin {
       return;
     }
 
-    this.build.buildServices(service, stage, gateway)
+    return this.build.buildServices(service, stage, gateway)
       .then(function() {
-        _this.deploy.deploy(service, func, stage, false)
-          .then(function() {
-            console.log('Finished deploying');
-          });
+        return _this.deploy.deploy(service, func, stage, false)
+      })
+      .then(function() {
+        console.log('Finished deploying');
       });
-
   }
 
 }
